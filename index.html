@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto+Condensed:wght@300&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <title>dev.finance$</title>
+    </head>
+    <body>
+        <header>
+            <p><img src="assets/logo.svg" id="logo" /></p>
+        </header>
+        <main>
+            <div class="card-container">
+                <div class="card">
+                    <h4>
+                        <span>Entradas</span>
+                        <img width="20" src="assets/income.svg" id="income" />
+                    </h4>
+                    <h2 id="incomeDisplay">R$17.000</h2>
+                </div>
+                <div class="card">
+                    <h4>
+                        <span>Saídas</span>
+                        <img width="20" src="assets/expense.svg" id="expense" />
+                    </h4>
+                    <h2 id="expenseDisplay">R$17.000</h2>
+                </div>
+                <div class="card">
+                    <h4>
+                        <span>Total</span>
+                        <img width="20" src="assets/total.svg" id="total" />
+                    </h4>
+                    <h2 id="totalDisplay">R$17.000</h2>
+                </div>
+            </div>
+
+            <section class="tabela-container">
+                <div class="container-nova-transacao">
+                    <a href="#" id="nova-transacao" onclick="Modal.open()">+Nova Transação</a>
+                </div>
+                <table class="tabela">
+                    <thead>
+                        <tr class="tabela-cabeçalho">
+                            <td class="tabela-cabeçalho-coluna">Descrição</td>
+                            <td class="tabela-cabeçalho-coluna">Valor</td>
+                            <td class="tabela-cabeçalho-coluna">Data</td>
+                        </tr>
+                    </thead>
+                    <tbody class="tabela-corpo">
+                    </tbody>
+                </table>
+            </section>
+
+            <div class="modal-overlay">
+                <div class="modal">
+                    <form class="modal-form" action="" onsubmit="Form.submit()">
+                        <h3>Nova Transação</h3>
+                        <input id="input-descricao" type="text" placeholder="Descrição" />
+                        <input id="input-valor" type="number" placeholder="0,00" step='0.01'/>
+                        <small>
+                            Use o sinal -(negativo) para despesas e , (vírgula)
+                            para casas decimais
+                        </small>
+                        <input id="input-data" type="date" />
+                        <div class="button-container">
+                            <button type="button" id="button-cancelar" onclick="Modal.close()">Cancelar</button>
+                            <button type="submit" id="button-salvar">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </body>
+    <script src="script.js"></script>
+</html>
