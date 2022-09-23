@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#4285f4">
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -11,6 +12,7 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="style.css" />
+        <link rel="manifest" href="/manifes.json" />
         <title>dev.finance$</title>
     </head>
     <body>
@@ -78,6 +80,19 @@
                 </div>
             </div>
         </main>
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/sw.js')
+                        .then(function (reg) {
+                            console.log('service worker registered',reg);
+                        })
+                        .catch(function (err) {
+                            console.warn('service worker failed',err);
+                        });
+                })
+            }
+        </script>
     </body>
     <script src="script.js"></script>
 </html>
