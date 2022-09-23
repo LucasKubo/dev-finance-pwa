@@ -1,2 +1,5 @@
 # DevFinance
-Projeto elaborado seguindo o curso "Maratona Discover 01" da Rocketseat.
+Projeto DevFinance para controle de gastos com PWA implementado.
+<br>
+<br>
+[Acesse aqui](https://dev-finance-pwa-dmxm.vercel.app/)
